@@ -5,10 +5,10 @@ pub trait I2CAsync {
         &mut self,
         addr: impl Into<u16>,
         bytes: impl IntoIterator<Item = u8>,
-    ) -> impl core::future::Future<Output = Result<(), Self::Error>> + Send;
+    ) -> impl Future<Output = Result<(), Self::Error>>;
 }
 
 pub trait SleepableAsync {
-    fn sleep_for_millis(&mut self, millis: u64) -> impl core::future::Future<Output = ()> + Send;
-    fn sleep_for_micros(&mut self, millis: u64) -> impl core::future::Future<Output = ()> + Send;
+    fn sleep_for_millis(&mut self, millis: u64) -> impl Future<Output = ()>;
+    fn sleep_for_micros(&mut self, macros: u64) -> impl Future<Output = ()>;
 }

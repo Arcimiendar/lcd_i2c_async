@@ -1,5 +1,6 @@
 use crate::config::{Config, LcdBacklight};
 use crate::traits::{I2CAsync, SleepableAsync};
+
 const EN: u8 = 0b00000100; // Enable bit
 const RS: u8 = 0b00000001; // Register select bit
 
