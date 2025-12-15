@@ -317,4 +317,12 @@ where
         }
         Ok(())
     }
+
+    pub async fn print_bytes(&mut self, bytes: &[u8]) -> Result<(), T::Error> {
+        for c in bytes {
+            self.lcd.write(*c).await?;
+        }
+
+        Ok(())
+    }
 }
